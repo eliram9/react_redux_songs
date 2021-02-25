@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 // The first resucer is a static list of songs 
-const songsListReducer = () => {
+const songListReducer = () => {
     return [
         { title: 'D.O.A', duration: '4:16' },
         { title: 'Paradise', duration: '4:20' },
@@ -19,7 +19,7 @@ const selectedSongReducer = (selectedSong = null, action) => {
 }
 
 export default combineReducers({
-   songs: songsListReducer,
+   songs: songListReducer,
    selectedSong: selectedSongReducer 
 });
  

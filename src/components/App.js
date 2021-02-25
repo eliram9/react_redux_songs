@@ -1,10 +1,12 @@
+import SongList from '../components/songList/SongList';
 import './App.css';
+
 
 
 function App() {
     return (
         <div>
-            <h1 className="display-4">Songs</h1>
+            <SongList />
         </div>
     );
 }
