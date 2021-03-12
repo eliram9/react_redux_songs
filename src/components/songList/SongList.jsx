@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
+import { selectSong } from '../../actions'
+import SongDetails from '../songDetails/SongDetails';
 import './SongList.css';
 
 class SongList extends Component {
@@ -20,7 +22,13 @@ class SongList extends Component {
                     </div>
 
                     <div className="select_btn">
-                        <button type="button" className="btn btn-outline-primary">Select</button>
+                        <button type="button" 
+                                className="btn btn-outline-primary"
+                                // fire the selectSong func. and pass the current song we clicked.
+                                onClick={ () => this.props.selectSong(song) } 
+                        >
+                            Select
+                        </button> 
                     </div>
                 </div>
             );
@@ -35,7 +43,7 @@ class SongList extends Component {
                         {this.renderList()}             
                     </div>
                     <div className="col song_list">
-                        hello there            
+                        <SongDetails />         
                     </div>
                 </div>
             </div>
@@ -44,9 +52,11 @@ class SongList extends Component {
     }
 }
 
-// "Converting" all data we have in redux store into a props
+// "Converting" all data we have in redux store (aka state) into a props
 const mapStateToProps = (state) => {
     return { songs: state.songs };
 }
  
-export default connect(mapStateToProps)(SongList);
+export default connect(mapStateToProps, {
+    selectSong: selectSong
+})(SongList);

@@ -3,10 +3,10 @@ import { combineReducers } from 'redux';
 // The first resucer is a static list of songs 
 const songListReducer = () => {
     return [
-        { title: 'D.O.A', duration: '4:16' },
-        { title: 'Paradise', duration: '4:20' },
-        { title: 'Get Lucky', duration: '6:06' },
-        { title: 'Alien', duration: '2:44' }
+        { title: 'D.O.A',artist: 'Jay-Z', duration: '4:16' },
+        { title: 'Paradise',artist: 'Coldplay', duration: '4:20' },
+        { title: 'Get Lucky',artist: 'Pharrell Williams', duration: '6:06' },
+        { title: 'Alien',artist: 'Dennis Lloyd', duration: '2:44' }
     ];
 };
 
